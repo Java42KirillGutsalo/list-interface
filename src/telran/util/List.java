@@ -55,7 +55,8 @@ public interface List<T> extends Iterable<T> {
 	 */
 	default int indexOf(T pattern) {
 		//O[N] for ArrayList and LinkedList
-		return indexOf(new EqualsPattern<T>(pattern));
+		//TODO write code without class EqualsPattern
+		return -1;
 	}
 	
 	/**
@@ -65,7 +66,8 @@ public interface List<T> extends Iterable<T> {
 	 */
 	default int lastIndexOf(T pattern) {
 		//O[N] for ArrayList and LinkedList
-		return lastIndexOf(new EqualsPattern<T>(pattern));
+		//TODO write code without class EqualsPattern
+		return -1;
 	}
 	
 	/**
@@ -134,7 +136,8 @@ public interface List<T> extends Iterable<T> {
 			clear();
 			return true;
 		}
-		return removeIf(new RemoveAllPredicate<>(list));
+		//TODO rewrite code based on removeIf but without additional Predicate
+		return false;
 	}
 	
 	/**
@@ -144,7 +147,8 @@ public interface List<T> extends Iterable<T> {
 	 */
 	default boolean retainAll(List<T> list) {
 		//O[N] (need to update removeIf for ArrayList)
-		return removeIf(new RemoveAllPredicate<>(list).negate());
+		//TODO rewrite code based on removeIf but without additional Predicate
+		return false;
 	}
 	/**
 	 * searches for pattern in a sorted list by given comparator
