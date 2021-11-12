@@ -144,7 +144,6 @@ public interface List<T> extends Iterable<T> {
 	 */
 	default boolean retainAll(List<T> list) {
 		//O[N] (need to update removeIf for ArrayList)
-		//TODO rewrite code based on removeIf but without additional Predicate
 		return removeIf(t -> !list.contains(t));
 	}
 	/**
